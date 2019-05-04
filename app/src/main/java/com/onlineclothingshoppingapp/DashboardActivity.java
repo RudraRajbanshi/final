@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -25,6 +26,7 @@ import model.Pant;
 public class DashboardActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Button btnAdd;
+    private ImageView refresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,15 @@ public class DashboardActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerview);
         btnAdd = findViewById(R.id.btnAdd);
+        refresh = findViewById(R.id.refresh);
+
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this,DashboardActivity.class);
+                startActivity(intent);
+            }
+        });
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.onlineclothingshoppingapp.DescriptionActivity;
 import com.onlineclothingshoppingapp.R;
 
 import java.util.List;
@@ -39,19 +40,20 @@ public class PantAdapter extends RecyclerView.Adapter<PantAdapter.ItemsViewHolde
         itemsViewHolder.tvName.setText(pant.getItemName());
         itemsViewHolder.tvPrice.setText(pant.getItemPrice());
 
-//        itemsViewHolder.impProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(mContext, DetailsActivity.class);
-//
-//                intent.putExtra("image",contacts.getImageId());
-//                intent.putExtra("name",contacts.getName());
-//                intent.putExtra("phone",contacts.getPhoneNo());
-//                intent.putExtra("email",contacts.getEmail());
-//
-//                mContext.startActivity(intent);
-    }
+        itemsViewHolder.impProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, DescriptionActivity.class);
 
+                intent.putExtra("image", pant.getItemImage());
+                intent.putExtra("name", pant.getItemName());
+                intent.putExtra("price", pant.getItemPrice());
+                intent.putExtra("description", pant.getItemDescription());
+
+                mContext.startActivity(intent);
+            }
+            });
+        }
     @Override
     public int getItemCount() {
         return pantList.size();
