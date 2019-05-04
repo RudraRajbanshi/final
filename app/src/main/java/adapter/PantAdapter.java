@@ -28,17 +28,16 @@ public class PantAdapter extends RecyclerView.Adapter<PantAdapter.ItemsViewHolde
     @NonNull
     @Override
     public ItemsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_dashboard,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_viewitems,viewGroup,false);
         return new ItemsViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ItemsViewHolder itemsViewHolder, int i) {
         final Pant pant = pantList.get(i);
-        //itemsViewHolder.impProfile.setImageResource(pant.getItemImage());
+        itemsViewHolder.impProfile.setImageResource(pant.getItemImage());
         itemsViewHolder.tvName.setText(pant.getItemName());
-        itemsViewHolder.tvPhone.setText(pant.getItemPrice());
-        itemsViewHolder.tvEmail.setText(pant.getItemDescription());
+        itemsViewHolder.tvPrice.setText(pant.getItemPrice());
 
 //        itemsViewHolder.impProfile.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -55,19 +54,18 @@ public class PantAdapter extends RecyclerView.Adapter<PantAdapter.ItemsViewHolde
 
     @Override
     public int getItemCount() {
-        return 0;
+        return pantList.size();
     }
 
     public class ItemsViewHolder extends RecyclerView.ViewHolder{
         CircleImageView impProfile;
-        TextView tvName,tvPhone, tvEmail;
+        TextView tvName,tvPrice;
 
         public ItemsViewHolder(@NonNull View itemView) {
             super(itemView);
-//            impProfile = itemView.findViewById(R.id.etImage);
-//            tvName = itemView.findViewById(R.id.tvName);
-//            tvPhone = itemView.findViewById(R.id.etImage);
-//            tvEmail = itemView.findViewById(R.id.etImage);
+            impProfile = itemView.findViewById(R.id.img);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvPrice = itemView.findViewById(R.id.tvPrice);
         }
     }
 }

@@ -1,13 +1,14 @@
 package model;
 
 public class Pant {
-    private String itemName,itemPrice,itemImage,itemDescription;
+    private String itemName,itemPrice,itemDescription;
+    private int itemImage;
 
-    public Pant(String itemName, String itemPrice, String itemImage, String itemDescription) {
+    public Pant(String itemName, String itemPrice, String itemDescription, int itemImage) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
-        this.itemImage = itemImage;
         this.itemDescription = itemDescription;
+        this.itemImage = itemImage;
     }
 
     public String getItemName() {
@@ -26,16 +27,16 @@ public class Pant {
         this.itemPrice = itemPrice;
     }
 
-    public String getItemImage() {
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public int getItemImage() {
         return itemImage;
     }
 
-    public void setItemImage(String itemImage) {
+    public void setItemImage(int itemImage) {
         this.itemImage = itemImage;
-    }
-
-    public String getItemDescription() {
-        return itemDescription;
     }
 
     public void setItemDescription(String itemDescription) {
