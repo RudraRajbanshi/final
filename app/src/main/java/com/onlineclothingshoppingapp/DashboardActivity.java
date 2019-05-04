@@ -20,7 +20,7 @@ public class DashboardActivity extends AppCompatActivity {
         btnAdditem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DashboardActivity.this,AdditemActivity.class);
+                Intent intent = new Intent(DashboardActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
